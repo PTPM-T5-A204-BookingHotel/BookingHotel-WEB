@@ -1,9 +1,12 @@
 using api.Data;
+using api.Repositories;
+using api.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
+AddDI(builder.Services);
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -27,5 +30,6 @@ app.MapControllers();
 app.Run();
 void AddDI(IServiceCollection services)
 {
-    
+    services.AddScoped<HoaDonDatPhongRepository>();
+    services.AddScoped<IHoaDonDatHangService, HoaDonDatHangService>();
 }

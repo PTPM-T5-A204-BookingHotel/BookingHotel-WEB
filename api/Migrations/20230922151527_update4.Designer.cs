@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using api.Data;
 
@@ -11,9 +12,11 @@ using api.Data;
 namespace api.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20230922151527_update4")]
+    partial class update4
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -41,7 +44,7 @@ namespace api.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("DichVu", (string)null);
+                    b.ToTable("DichVu");
                 });
 
             modelBuilder.Entity("api.Models.HoaDonDatPhong", b =>
@@ -86,7 +89,7 @@ namespace api.Migrations
 
                     b.HasIndex("LoaiPhongId");
 
-                    b.ToTable("HoaDonDatPhong", (string)null);
+                    b.ToTable("HoaDonDatPhong");
                 });
 
             modelBuilder.Entity("api.Models.HoaDonDatPhongDichVu", b =>
@@ -101,7 +104,7 @@ namespace api.Migrations
 
                     b.HasIndex("DichVuId");
 
-                    b.ToTable("HoaDonDatPhongDichVu", (string)null);
+                    b.ToTable("HoaDonDatPhongDichVu");
                 });
 
             modelBuilder.Entity("api.Models.KhachHang", b =>
@@ -132,7 +135,7 @@ namespace api.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("KhachHang", (string)null);
+                    b.ToTable("KhachHang");
                 });
 
             modelBuilder.Entity("api.Models.LoaiPhong", b =>
@@ -154,7 +157,7 @@ namespace api.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("LoaiPhong", (string)null);
+                    b.ToTable("LoaiPhong");
                 });
 
             modelBuilder.Entity("api.Models.Phong", b =>
@@ -178,7 +181,7 @@ namespace api.Migrations
 
                     b.HasIndex("LoaiPhongId");
 
-                    b.ToTable("Phong", (string)null);
+                    b.ToTable("Phong");
                 });
 
             modelBuilder.Entity("api.Models.HoaDonDatPhong", b =>

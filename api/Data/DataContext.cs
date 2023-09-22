@@ -29,5 +29,12 @@ namespace api.Data
         public DbSet<KhachHang> KhachHang { get; set; }
         public DbSet<LoaiPhong> LoaiPhong { get; set;}
         public DbSet<Phong> Phong { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<HoaDonDatPhongDichVu>().HasKey(p => new { p.HoaDonDatPhongId, p.DichVuId });
+            modelBuilder.Entity<HoaDonDatPhongDichVu>().HasOne(p => p.HoaDonDatPhongs).WithMany(hd => hd.HoaDonDichVu).HasForeignKey(hddv => hddv.HoaDonDatPhongId);
+            modelBuilder.Entity<HoaDonDatPhongDichVu>().HasOne(p => p.DichVus).WithMany(dv => dv.HoaDonDichVu).HasForeignKey(hddv => hddv.DichVuId);
+        }
     }
 }

@@ -10,6 +10,9 @@
         public int SoLuongTreEm { get; set; }
         public int SoLuongPhong { get; set; }
         public double TongTien { get; set; }
+        public string GioiTinh { get; set; } = string.Empty;
+        public string HinhXacNhan { get; set; } = string.Empty;
+        public int CCCD { get; set; }
         public KhachHang? KhachHang { get; set; }
         public LoaiPhong? LoaiPhong { get; set; }
         public List<DichVuResponse> DichVus {  get; set; }

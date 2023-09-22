@@ -9,6 +9,9 @@
         public int SoLuongTreEm { get; set; }
         public int SoLuongPhong { get; set; }
         public double? TongTien { get; set; }
+        public string GioiTinh { get; set; } = string.Empty;
+        public string HinhXacNhan { get; set; } = string.Empty;
+        public int CCCD { get; set; }
         public int? KhachHangId { get; set; }
         public int LoaiPhongId { get; set; }
     }

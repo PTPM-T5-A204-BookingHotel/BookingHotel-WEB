@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Phát triển úng dụng thông minh\\BookingHotel-WEB\\api\\api.csproj": {}
+    "D:\\Phát triển úng dụng thông minh\\BookingHotel-WEB\\teamplate\\api\\api.csproj": {}
   },
   "projects": {
-    "D:\\Phát triển úng dụng thông minh\\BookingHotel-WEB\\api\\api.csproj": {
+    "D:\\Phát triển úng dụng thông minh\\BookingHotel-WEB\\teamplate\\api\\api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Phát triển úng dụng thông minh\\BookingHotel-WEB\\api\\api.csproj",
+        "projectUniqueName": "D:\\Phát triển úng dụng thông minh\\BookingHotel-WEB\\teamplate\\api\\api.csproj",
         "projectName": "api",
-        "projectPath": "D:\\Phát triển úng dụng thông minh\\BookingHotel-WEB\\api\\api.csproj",
+        "projectPath": "D:\\Phát triển úng dụng thông minh\\BookingHotel-WEB\\teamplate\\api\\api.csproj",
         "packagesPath": "C:\\Users\\nguye\\.nuget\\packages\\",
-        "outputPath": "D:\\Phát triển úng dụng thông minh\\BookingHotel-WEB\\api\\obj\\",
+        "outputPath": "D:\\Phát triển úng dụng thông minh\\BookingHotel-WEB\\teamplate\\api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\nguye\\AppData\\Roaming\\NuGet\\NuGet.Config",

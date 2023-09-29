@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace api.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class HoaDonDatPhongController : ControllerBase
     {
@@ -18,13 +18,13 @@ namespace api.Controllers
             _hoaDonDatHangService = hoaDonDatHangService;
             _mapper = mapper;
         }
-        [HttpGet("hoaDonDatPhong")]
-        public async Task<IActionResult> GetHoaDons()
+        [HttpGet]
+        public async Task<IActionResult> Get()
         {
             var hoaDon = await _hoaDonDatHangService.GetHoaDons();
             return Ok(_mapper.Map<List<HoaDonDatPhongResponse>>(hoaDon));
         }
-        [HttpGet("hoaDonDatPhong/{id}")]
+        [HttpGet("{id}")]
         public async Task<IActionResult> GetHoaDonId(int id)
         {
             var hoaDon = await _hoaDonDatHangService.GetHoaDon(id);

@@ -25,6 +25,7 @@ namespace api.AutoMapper
             CreateMap<HoaDonDatPhong, HoaDonDatPhongResponse>().ReverseMap();
             CreateMap<HoaDonDatPhong, HoaDonDatPhongRepository>().ReverseMap();
             CreateMap<HoaDonDatPhongRequest,HoaDonDatPhong>().ReverseMap();
+            CreateMap<HoaDonDatPhongRequest, HoaDonDatPhongResponse>().ReverseMap();
         }
     }
 }

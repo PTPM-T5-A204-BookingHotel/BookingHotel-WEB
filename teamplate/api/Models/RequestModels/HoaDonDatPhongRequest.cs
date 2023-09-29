@@ -13,6 +13,6 @@
         public string HinhXacNhan { get; set; } = string.Empty;
         public int CCCD { get; set; }
         public int? KhachHangId { get; set; }
-        public int LoaiPhongId { get; set; }
+        public int? LoaiPhongId { get; set; }
     }
 }

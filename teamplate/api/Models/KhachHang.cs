@@ -1,14 +1,27 @@
-﻿namespace api.Models
+﻿using System;
+using System.Collections.Generic;
+
+namespace api.Models;
+
+public partial class KhachHang
 {
-    public class KhachHang
-    {
-        public int Id { get; set; }
-        public string? Ten { get; set; } = string.Empty;
-        public string? Email {  get; set; } = string.Empty;
-        public DateTime? NgaySinh { get; set; }
-        public string? DiaChi { get; set; } = string.Empty;
-        public string? CCCD { get; set; } = string.Empty;
-        public int? SoDienThoai {  get; set; }
-        public ICollection<HoaDonDatPhong>? HoaDonDatPhong { get; set; }
-    }
+    public int MaKh { get; set; }
+
+    public string Cccdkh { get; set; } = null!;
+
+    public string HoTenKh { get; set; } = null!;
+
+    public string GioiTinhKh { get; set; } = null!;
+
+    public string DiaChiKh { get; set; } = null!;
+
+    public string Sdtkh { get; set; } = null!;
+
+    public string? AnhKh { get; set; }
+
+    public string? EmailKh { get; set; }
+
+    public DateTime NgaySinhKh { get; set; }
+
+    public virtual ICollection<HoaDon> HoaDons { get; set; } = new List<HoaDon>();
 }

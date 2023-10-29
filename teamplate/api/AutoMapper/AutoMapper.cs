@@ -1,7 +1,6 @@
 ﻿using api.Models;
 using api.Models.RequestModels;
 using api.Models.ResponseModels;
-using api.Repositories;
 using AutoMapper;
 
 namespace api.AutoMapper
@@ -10,22 +9,12 @@ namespace api.AutoMapper
     {
         public AutoMapper() 
         {
-            MapperDichVu();
-            MapperHoaDonDatPhong();
-            
+            MapperHoaDon();
         }
-        private void MapperDichVu()
+        private void MapperHoaDon()
         {
-            CreateMap<DichVu,DichVuResponse>().ReverseMap();
-        }
-        
-       
-        private void MapperHoaDonDatPhong()
-        {
-            CreateMap<HoaDonDatPhong, HoaDonDatPhongResponse>().ReverseMap();
-            CreateMap<HoaDonDatPhong, HoaDonDatPhongRepository>().ReverseMap();
-            CreateMap<HoaDonDatPhongRequest,HoaDonDatPhong>().ReverseMap();
-            CreateMap<HoaDonDatPhongRequest, HoaDonDatPhongResponse>().ReverseMap();
+            CreateMap<HoaDon,HoaDonResponse>().ReverseMap();
+            CreateMap<HoaDon,HoaDonRequest>().ReverseMap();
         }
     }
 }

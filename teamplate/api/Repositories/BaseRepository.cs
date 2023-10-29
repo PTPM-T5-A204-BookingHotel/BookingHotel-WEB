@@ -1,13 +1,13 @@
-﻿using api.Data;
+﻿using api.Models;
 
 namespace api.Repositories
 {
     public class BaseRepository<T> where T : class
     {
-        private readonly DataContext _dataContext;
+        private readonly QlkhachSanContext _dataContext;
         public BaseRepository()
         {
-            _dataContext = new DataContext();
+            _dataContext = new QlkhachSanContext();
         }
         public IQueryable<T> GetAll()
         {
@@ -20,7 +20,7 @@ namespace api.Repositories
                 throw new Exception($"Error getting entity: {ex.Message}", ex);
             }
         }
-        public async Task<T?> GetId(int id)
+        public async Task<T?> GetId(string? id)
         {
             try
             {
@@ -56,7 +56,7 @@ namespace api.Repositories
                 throw new Exception($"Error getting entity: {ex.Message}", ex);
             }
         }
-        public async Task Delete(int id)
+        public async Task Delete(string id)
         {
             try
             {

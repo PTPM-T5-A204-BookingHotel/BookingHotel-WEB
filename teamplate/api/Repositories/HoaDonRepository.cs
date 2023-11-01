@@ -21,5 +21,33 @@ namespace api.Repositories
             }
             return Task.CompletedTask;
         }
+        public async Task<HoaDon> GetIdHoaDon(string? id)
+        {
+            try
+            {
+                var allid = await _dataContext.Set<HoaDon>().FindAsync(id);
+                return allid;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error getting entity: {ex.Message}", ex);
+            }
+        }
+        public async Task DeleteHoaDon(string id)
+        {
+            try
+            {
+                var allid = await _dataContext.Set<HoaDon>().FindAsync(id);
+                if (allid != null)
+                {
+                    _dataContext.Set<HoaDon>().Remove(allid);
+                    await _dataContext.SaveChangesAsync();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error getting entity: {ex.Message}", ex);
+            }
+        }
     }
 }

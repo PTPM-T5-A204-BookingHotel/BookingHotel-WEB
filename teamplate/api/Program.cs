@@ -31,6 +31,16 @@ app.MapControllers();
 app.Run();
 void AddDI(IServiceCollection services)
 {
+    //Repository
+    services.AddScoped<LoaiPhongRepository>();
     services.AddScoped<HoaDonRepository>();
+    services.AddScoped<PhongRepository>();
+    services.AddScoped<DatPhongRepository>();
+
+    //iservice
+    services.AddScoped<ILoaiPhongService, LoaiPhongService>();
     services.AddScoped<IHoaDonService,HoaDonService>();
+    services.AddScoped<IPhongService, PhongService>();
+    services.AddScoped<IDatPhongService, DatPhongService>();
+
 }

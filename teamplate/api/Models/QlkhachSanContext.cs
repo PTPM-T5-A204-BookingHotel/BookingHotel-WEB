@@ -14,8 +14,25 @@ public partial class QlkhachSanContext : DbContext
         : base(options)
     {
     }
-
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        if (!optionsBuilder.IsConfigured)
+        {
+            optionsBuilder.UseSqlServer(GetConnectionString());
+        }
+    }
+    private string GetConnectionString()
+    {
+        IConfiguration config = new ConfigurationBuilder()
+         .SetBasePath(Directory.GetCurrentDirectory())
+        .AddJsonFile("appsettings.json", true, true)
+        .Build();
+        var strConn = config["ConnectionStrings:DefaultConnection"];
+        return strConn;
+    }
     public virtual DbSet<ChucVu> ChucVus { get; set; }
+
+    public virtual DbSet<DatPhong> DatPhongs { get; set; }
 
     public virtual DbSet<DichVu> DichVus { get; set; }
 
@@ -45,9 +62,6 @@ public partial class QlkhachSanContext : DbContext
 
     public virtual DbSet<VatTu> VatTus { get; set; }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Server=Dainn;Database=QLKhachSan;Integrated Security=True;Trusted_Connection=True;TrustServerCertificate=True;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -57,12 +71,30 @@ public partial class QlkhachSanContext : DbContext
 
             entity.ToTable("ChucVu");
 
-            entity.HasIndex(e => e.TenCv, "UQ__ChucVu__4CF922062885F1ED").IsUnique();
+            entity.HasIndex(e => e.TenCv, "UQ__ChucVu__4CF92206B7DF391F").IsUnique();
 
             entity.Property(e => e.MaCv).HasColumnName("MaCV");
             entity.Property(e => e.TenCv)
                 .HasMaxLength(30)
                 .HasColumnName("TenCV");
+        });
+
+        modelBuilder.Entity<DatPhong>(entity =>
+        {
+            entity.HasKey(e => e.MaDp).HasName("pk_MaDP_DatPhong");
+
+            entity.ToTable("DatPhong");
+
+            entity.Property(e => e.MaDp).HasColumnName("MaDP");
+            entity.Property(e => e.Email)
+                .HasMaxLength(100)
+                .IsUnicode(false);
+            entity.Property(e => e.Sdt)
+                .HasMaxLength(10)
+                .IsUnicode(false)
+                .HasColumnName("SDT");
+            entity.Property(e => e.SoLuongTgoLai).HasColumnName("SoLuongTGoLai");
+            entity.Property(e => e.ThoiGianNhanPhong).HasColumnType("date");
         });
 
         modelBuilder.Entity<DichVu>(entity =>
@@ -180,7 +212,7 @@ public partial class QlkhachSanContext : DbContext
 
             entity.ToTable("KhachHang");
 
-            entity.HasIndex(e => e.Cccdkh, "UQ__KhachHan__DAF61A7073696E54").IsUnique();
+            entity.HasIndex(e => e.Cccdkh, "UQ__KhachHan__DAF61A70FF7E3539").IsUnique();
 
             entity.Property(e => e.MaKh).HasColumnName("MaKH");
             entity.Property(e => e.AnhKh).HasColumnName("AnhKH");
@@ -272,9 +304,6 @@ public partial class QlkhachSanContext : DbContext
             entity.Property(e => e.DiaChiNcc)
                 .HasMaxLength(100)
                 .HasColumnName("DiaChiNCC");
-            entity.Property(e => e.GioiTinhNcc)
-                .HasMaxLength(5)
-                .HasColumnName("GioiTinhNCC");
             entity.Property(e => e.Sdtncc)
                 .HasMaxLength(10)
                 .IsUnicode(false)
@@ -288,7 +317,7 @@ public partial class QlkhachSanContext : DbContext
 
             entity.ToTable("NhanVien");
 
-            entity.HasIndex(e => e.Cccdnv, "UQ__NhanVien__DAF660C800CF3946").IsUnique();
+            entity.HasIndex(e => e.Cccdnv, "UQ__NhanVien__DAF660C8139DE577").IsUnique();
 
             entity.Property(e => e.MaNv).HasColumnName("MaNV");
             entity.Property(e => e.AnhNv).HasColumnName("AnhNV");
@@ -365,7 +394,7 @@ public partial class QlkhachSanContext : DbContext
 
             entity.ToTable("Phong");
 
-            entity.HasIndex(e => e.TenPh, "UQ__Phong__4CF9C7CF3C3F6D2C").IsUnique();
+            entity.HasIndex(e => e.TenPh, "UQ__Phong__4CF9C7CF37E9D967").IsUnique();
 
             entity.Property(e => e.MaPh).HasColumnName("MaPH");
             entity.Property(e => e.MaLp).HasColumnName("MaLP");

@@ -13,7 +13,5 @@ public partial class NhaCc
 
     public string Sdtncc { get; set; } = null!;
 
-    public string GioiTinhNcc { get; set; } = null!;
-
     public virtual ICollection<NhapKho> NhapKhos { get; set; } = new List<NhapKho>();
 }

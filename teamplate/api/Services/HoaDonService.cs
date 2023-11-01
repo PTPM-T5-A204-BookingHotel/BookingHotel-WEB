@@ -34,12 +34,12 @@ namespace api.Services
 
         public async Task DeleteHoaDons(string? id)
         {
-            await _hoaDonRepository.Delete(id);
+            await _hoaDonRepository.DeleteHoaDon(id);
         }
 
         public async Task<HoaDon?> GetHoaDonByIds(string? id)
         {
-            return await _hoaDonRepository.GetId(id);
+            return await _hoaDonRepository.GetIdHoaDon(id);
         }
 
         public async Task<ICollection<HoaDon>> GetHoaDons()

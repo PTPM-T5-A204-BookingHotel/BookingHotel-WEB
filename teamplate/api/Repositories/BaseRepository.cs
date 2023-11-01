@@ -20,7 +20,7 @@ namespace api.Repositories
                 throw new Exception($"Error getting entity: {ex.Message}", ex);
             }
         }
-        public async Task<T?> GetId(string? id)
+        public async Task<T?> GetId(int id)
         {
             try
             {
@@ -56,7 +56,7 @@ namespace api.Repositories
                 throw new Exception($"Error getting entity: {ex.Message}", ex);
             }
         }
-        public async Task Delete(string id)
+        public async Task Delete(int id)
         {
             try
             {

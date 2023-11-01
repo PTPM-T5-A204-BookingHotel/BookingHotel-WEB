@@ -8,7 +8,7 @@ using System.Collections.Generic;
 
 namespace api.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class HoaDonController : ControllerBase
     {
@@ -27,7 +27,7 @@ namespace api.Controllers
             {
                 return NotFound("Không có hóa đơn nào");
             }
-            return Ok(_mapper.Map<List<HoaDonResponse>>(result));
+            return Ok(_mapper.Map<List<HoaDonRequest>>(result));
         }
         [HttpGet("{id}")]
         public async Task<IActionResult> GetHoaDonById(string? id)
@@ -45,13 +45,13 @@ namespace api.Controllers
         public async Task<IActionResult> Put([FromBody] HoaDonRequest hd)
         {
             await _hoaDonService.UpdateHoaDons(hd);
-            return Ok();
+            return Ok("Cập nhật Hóa Đơn Thành Công");
         }
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(string? id)
         {
             await _hoaDonService.DeleteHoaDons(id);
-            return Ok();
+            return Ok("Xóa Hóa Đơn Thành Công");
         }
     }
 }

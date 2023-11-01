@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\bookinghotel_web.props" />
-</Project>

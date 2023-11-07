@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using System.Diagnostics;
 using System.Net.Http.Formatting;
+using System.Net.Http.Headers;
 using System.Text;
 using Web.Models;
 
@@ -44,6 +45,47 @@ namespace Web.Controllers
             }
             return Task.FromResult<IActionResult>(View());
         }
+        [HttpGet]
+        public IActionResult UploadImage()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> UploadImage(DatPhongImageViewModel model)
+        {
+            try
+            {
+                using (var content = new MultipartFormDataContent())
+                {
+                    content.Add(new StringContent(model.MaDp.ToString()), "MaDp");
+
+                    content.Add(new StreamContent(model.HinhAnh.OpenReadStream())
+                    {
+                        Headers =
+            {
+                ContentLength = model.HinhAnh.Length,
+                ContentType = new MediaTypeHeaderValue(model.HinhAnh.ContentType)
+            }
+                    }, "HinhAnh", model.HinhAnh.FileName);
+
+                    HttpResponseMessage responseMessage = await _client.PostAsync(baseURL + "UploadImage", content);
+
+                    if (responseMessage.IsSuccessStatusCode)
+                    {
+                        
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                
+            }
+            return View();
+
+        }
+
+
 
 
         public IActionResult Privacy()

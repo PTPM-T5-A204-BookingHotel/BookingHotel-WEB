@@ -20,5 +20,9 @@ namespace api.Repositories
             }
             return Task.CompletedTask;
         }
+        public DatPhong? GetBySodienthoai(string sodienthoai)
+        {
+            return _dataContext.DatPhongs.SingleOrDefault(dp => dp.Sdt == sodienthoai);
+        }
     }
 }

@@ -14,15 +14,16 @@ namespace api.Controllers
     [ApiController]
     public class DatPhongController : ControllerBase
     {
-        
+        private readonly IConfiguration _configuration;
         private readonly IWebHostEnvironment _webHostEnvironment;
         private readonly IMapper _mapper;
         private readonly IDatPhongService _datPhongService;
-        public DatPhongController(IMapper mapper, IDatPhongService datPhongService, IWebHostEnvironment webHostEnvironment)
+        public DatPhongController(IMapper mapper, IDatPhongService datPhongService, IWebHostEnvironment webHostEnvironment, IConfiguration configuration)
         {
             _datPhongService = datPhongService;
             _mapper = mapper;
             _webHostEnvironment = webHostEnvironment;
+            _configuration = configuration;
         }
         [HttpGet]
         public async Task<IActionResult> Get()
@@ -45,10 +46,18 @@ namespace api.Controllers
             return Ok(dp);
         }
         [HttpPost]
-        public Task<IActionResult> Post(DatPhongRequest dp)
+        public async Task<IActionResult> Post(DatPhongRequest dp)
         {
-            var newdp = _datPhongService.CreateDatPhong(dp);
-            return Task.FromResult<IActionResult>(Ok("Đặt Phòng Thành Công"));
+            var isSuccess = await _datPhongService.CreateDatPhong(dp);
+
+            if (isSuccess)
+            {
+                return Ok("Đặt Phòng Thành Công");
+            }
+            else
+            {
+                return BadRequest("Đã xảy ra lỗi khi đặt phòng.");
+            }
         }
         [HttpPut]
         public async Task<IActionResult> Put([FromBody] DatPhongResponse dp)
@@ -62,44 +71,56 @@ namespace api.Controllers
             await _datPhongService.DeleteDatPhong(id);
             return Ok("Xóa Thông Tin Đặt Phòng Thành Công");
         }
-        [HttpPut("UploadImage")]
-        public async Task<IActionResult> UploadImage(int MaDp, IFormFile formFile)
+        [HttpPost]
+        public IActionResult UploadImage([FromForm] HinhDatPhongResponse model)
         {
-            APIResponse response = new APIResponse();
-            try
+            if (ModelState.IsValid)
             {
-                string Filepath = GetFilepath(MaDp);
-
-                if (!System.IO.Directory.Exists(Filepath))
+                try
                 {
-                    System.IO.Directory.CreateDirectory(Filepath);
+                    string Filepath = GetFilepath(model.MaDp);
+
+                    if (!System.IO.Directory.Exists(Filepath))
+                    {
+                        System.IO.Directory.CreateDirectory(Filepath);
+                    }
+
+                    string fileExtension = Path.GetExtension(model.HinhAnh.FileName);
+                    string imagepath = Path.Combine(Filepath, model.MaDp + fileExtension);
+
+                    if (System.IO.File.Exists(imagepath))
+                    {
+                        System.IO.File.Delete(imagepath);
+                    }
+
+                    using (FileStream stream = System.IO.File.Create(imagepath))
+                    {
+                        model.HinhAnh.CopyTo(stream);
+                        SaveImagePathToDatabase(model.MaDp, imagepath);
+
+                        APIResponse response = new APIResponse
+                        {
+                            ResponseCode = 200,
+                            Result = "pass"
+                        };
+
+                        return Ok(response);
+                    }
                 }
-
-                string imagepath = Filepath + "\\" + MaDp + ".png";
-
-                if (System.IO.File.Exists(imagepath))
+                catch (Exception ex)
                 {
-                    System.IO.File.Delete(imagepath);
-                }
-
-                using (FileStream stream = System.IO.File.Create(imagepath))
-                {
-                    await formFile.CopyToAsync(stream);
-                    response.ResponseCode = 200;
-                    response.Result = "pass";
-                    SaveImagePathToDatabase(MaDp, imagepath);
+                    return BadRequest(new { ErrorMessage = ex.Message });
                 }
             }
-            catch (Exception ex)
-            {
-                response.Errormessage = ex.Message;
-            }
-            return Ok(response);
+
+            return BadRequest(new { ErrorMessage = "Invalid model state." });
         }
+
         private void SaveImagePathToDatabase(int MaDp, string imagePath)
         {
-            string _connectionString = "Server=Dainn;Database=QLKhachSan;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
-            using (SqlConnection connection = new SqlConnection(_connectionString))
+            string connectionString = _configuration.GetConnectionString("DefaultConnection");
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
 
@@ -114,6 +135,7 @@ namespace api.Controllers
                 }
             }
         }
+
         [NonAction]
         private string GetFilepath(int madp)
         {

@@ -37,7 +37,7 @@ namespace api.Services
             await _hoaDonRepository.DeleteHoaDon(id);
         }
 
-        public async Task<HoaDon?> GetHoaDonByIds(string? id)
+        public async Task<HoaDon> GetHoaDonByIds(string? id)
         {
             return await _hoaDonRepository.GetIdHoaDon(id);
         }

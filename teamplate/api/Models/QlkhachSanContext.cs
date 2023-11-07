@@ -93,6 +93,7 @@ public partial class QlkhachSanContext : DbContext
                 .HasMaxLength(10)
                 .IsUnicode(false)
                 .HasColumnName("SDT");
+            entity.HasIndex(e => e.Sdt).IsUnique();
             entity.Property(e => e.SoLuongTgoLai).HasColumnName("SoLuongTGoLai");
             entity.Property(e => e.ThoiGianNhanPhong).HasColumnType("date");
         });

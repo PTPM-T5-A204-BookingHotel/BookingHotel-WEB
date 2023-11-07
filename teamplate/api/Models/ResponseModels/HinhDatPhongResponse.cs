@@ -3,6 +3,6 @@
     public class HinhDatPhongResponse
     {
         public int MaDp { get; set; }
-        public byte[]? HinhAnh { get; set; }
+        public IFormFile HinhAnh { get; set; }
     }
 }

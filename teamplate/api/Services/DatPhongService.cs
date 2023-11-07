@@ -11,7 +11,7 @@ namespace api.Services
     {
         public Task<ICollection<DatPhong>> GetDatPhong();
         public Task<DatPhong> GetPhongByIdAsync(int phongId);
-        public Task CreateDatPhong(DatPhongRequest request);
+        public Task<bool> CreateDatPhong(DatPhongRequest request);
         public Task UpdateDtPhong(DatPhongResponse response);
         public Task DeleteDatPhong(int phongId);
     }
@@ -24,10 +24,18 @@ namespace api.Services
             _mapper = mapper;
             _datPhongRepository = datPhongRepository;
         }
-        public Task CreateDatPhong(DatPhongRequest request)
+        public async Task<bool> CreateDatPhong(DatPhongRequest request)
         {
+            var existingDatPhong = _datPhongRepository.GetBySodienthoai(request.Sdt);
+
+            if (existingDatPhong != null)
+            {
+                return false;
+            }
             var datPhong = _mapper.Map<DatPhong>(request);
-            return _datPhongRepository.Create(datPhong);
+            await _datPhongRepository.Create(datPhong);
+
+            return true;
         }
 
         public Task DeleteDatPhong(int phongId)

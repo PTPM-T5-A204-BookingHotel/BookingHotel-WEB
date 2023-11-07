@@ -1,3 +1,9 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Http;
 using api.Models;
 using api.Repositories;
 using api.Services;
@@ -8,10 +14,13 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
 AddDI(builder.Services);
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddDbContext<QlkhachSanContext>();
+builder.Services.AddDbContext<QlkhachSanContext>(options =>
+{
+    string connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+    options.UseSqlServer(connectionString);
+});
 
 var app = builder.Build();
 
@@ -23,24 +32,23 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
 app.UseAuthorization();
 
 app.MapControllers();
 
 app.Run();
+
 void AddDI(IServiceCollection services)
 {
-    //Repository
+    // Repository
     services.AddScoped<LoaiPhongRepository>();
     services.AddScoped<HoaDonRepository>();
     services.AddScoped<PhongRepository>();
     services.AddScoped<DatPhongRepository>();
 
-    //iservice
+    // IService
     services.AddScoped<ILoaiPhongService, LoaiPhongService>();
-    services.AddScoped<IHoaDonService,HoaDonService>();
+    services.AddScoped<IHoaDonService, HoaDonService>();
     services.AddScoped<IPhongService, PhongService>();
     services.AddScoped<IDatPhongService, DatPhongService>();
-
 }

@@ -1,65 +1,58 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model Web.Models.DatPhongViewModel
+
+@{
+    ViewData["Title"] = "Index";
 }
 
-<form action="#" id="form1">
-    <h2>Book a Room</h2>
-    <fieldset>
-        <div class="row">
-            <input type="text" class="input">
-            Your Name:
-        </div>
-        <div class="row">
-            <input type="text" class="input">
-            E-Mail Address:
-        </div>
-        <div class="row">
-            <input type="text" class="input">
-            Home Phone:
-        </div>
-        <div class="row">
-            <div class="select1">
-                <select>
-                    <option>&nbsp;</option>
-                    <option>...</option>
-                </select>
+<h1>Index</h1>
+
+<h4>DatPhongViewModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Index">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Hoten" class="control-label"></label>
+                <input asp-for="Hoten" class="form-control" />
+                <span asp-validation-for="Hoten" class="text-danger"></span>
             </div>
-            Length of Stay:
-        </div>
-        <div class="row">
-            <div class="select1">
-                <select>
-                    <option>&nbsp;</option>
-                    <option>...</option>
-                </select>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
             </div>
-            Number in Party:
-        </div>
-        <div class="row">
-            <div class="select2">
-                <select>
-                    <option>&nbsp;</option>
-                    <option>...</option>
-                </select>
+            <div class="form-group">
+                <label asp-for="Sdt" class="control-label"></label>
+                <input asp-for="Sdt" class="form-control" />
+                <span asp-validation-for="Sdt" class="text-danger"></span>
             </div>
-            <div class="select2">
-                <select>
-                    <option>&nbsp;</option>
-                    <option>...</option>
-                </select>
+            <div class="form-group">
+                <label asp-for="SoLuongTgoLai" class="control-label"></label>
+                <input asp-for="SoLuongTgoLai" class="form-control" />
+                <span asp-validation-for="SoLuongTgoLai" class="text-danger"></span>
             </div>
-            <div class="select2">
-                <select>
-                    <option>&nbsp;</option>
-                    <option>...</option>
-                </select>
+            <div class="form-group">
+                <label asp-for="SoLuongNg" class="control-label"></label>
+                <input asp-for="SoLuongNg" class="form-control" />
+                <span asp-validation-for="SoLuongNg" class="text-danger"></span>
             </div>
-            Arrival Date:
-        </div>
-        <div class="row_textarea">
-            Additional Comments:
-            <textarea cols="1" rows="1"></textarea>
-        </div>
-        <div class="wrapper"> <a href="#" class="button1">Send</a> <a href="#" class="button1">Clear</a> </div>
-    </fieldset>
-</form>
+            <div class="form-group">
+                <label asp-for="ThoiGianNhanPhong" class="control-label"></label>
+                <input asp-for="ThoiGianNhanPhong" class="form-control" />
+                <span asp-validation-for="ThoiGianNhanPhong" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

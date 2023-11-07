@@ -10,7 +10,7 @@ using System.IO;
 
 namespace api.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class DatPhongController : ControllerBase
     {
@@ -45,10 +45,10 @@ namespace api.Controllers
             return Ok(dp);
         }
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] DatPhongRequest dp)
+        public Task<IActionResult> Post(DatPhongRequest dp)
         {
             var newdp = _datPhongService.CreateDatPhong(dp);
-            return Ok("Đặt Phòng Thành Công");
+            return Task.FromResult<IActionResult>(Ok("Đặt Phòng Thành Công"));
         }
         [HttpPut]
         public async Task<IActionResult> Put([FromBody] DatPhongResponse dp)

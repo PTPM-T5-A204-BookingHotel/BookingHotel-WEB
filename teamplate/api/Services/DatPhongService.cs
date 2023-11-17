@@ -14,7 +14,9 @@ namespace api.Services
         public Task<bool> CreateDatPhong(DatPhongRequest request);
         public Task UpdateDtPhong(DatPhongResponse response);
         public Task DeleteDatPhong(int phongId);
-    }
+        public Task<bool> IsPhoneNumberExists(string sdt);
+
+	}
     public class DatPhongService : IDatPhongService
     {
         private readonly IMapper _mapper;
@@ -60,5 +62,10 @@ namespace api.Services
             var newdatPhong = _mapper.Map<DatPhong>(response);
             return _datPhongRepository.UpdateDatPhong(newdatPhong);
         }
-    }
+		public async Task<bool> IsPhoneNumberExists(string sdt)
+		{
+			var datPhong = await _datPhongRepository.GetDatPhongByPhoneNumberAsync(sdt);
+			return datPhong != null;
+		}
+	}
 }

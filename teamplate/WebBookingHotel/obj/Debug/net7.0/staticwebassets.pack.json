@@ -1,0 +1,197 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\Phát triển úng dụng thông minh\\BookingHotel-WEB\\teamplate\\WebBookingHotel\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\WebBookingHotel.bundle.scp.css",
+      "PackagePath": "staticwebassets\\WebBookingHotel.bundle.scp.css"
+    },
+    {
+      "Id": "D:\\Phát triển úng dụng thông minh\\BookingHotel-WEB\\teamplate\\WebBookingHotel\\wwwroot\\assets\\css\\accesibility.css",
+      "PackagePath": "staticwebassets\\assets\\css\\accesibility.css"
+    },
+    {
+      "Id": "D:\\Phát triển úng dụng thông minh\\BookingHotel-WEB\\teamplate\\WebBookingHotel\\wwwroot\\assets\\css\\contact-page.css",
+      "PackagePath": "staticwebassets\\assets\\css\\contact-page.css"
+    },
+    {
+      "Id": "D:\\Phát triển úng dụng thông minh\\BookingHotel-WEB\\teamplate\\WebBookingHotel\\wwwroot\\assets\\css\\facilities.css",
+      "PackagePath": "staticwebassets\\assets\\css\\facilities.css"
+    },
+    {
+      "Id": "D:\\Phát triển úng dụng thông minh\\BookingHotel-WEB\\teamplate\\WebBookingHotel\\wwwroot\\assets\\css\\global-footer.css",
+      "PackagePath": "staticwebassets\\assets\\css\\global-footer.css"
+    },
+    {
+      "Id": "D:\\Phát triển úng dụng thông minh\\BookingHotel-WEB\\teamplate\\WebBookingHotel\\wwwroot\\assets\\css\\global-header.css",
+      "PackagePath": "staticwebassets\\assets\\css\\global-header.css"
+    },
+    {
+      "Id": "D:\\Phát triển úng dụng thông minh\\BookingHotel-WEB\\teamplate\\WebBookingHotel\\wwwroot\\assets\\css\\index.css",
+      "PackagePath": "staticwebassets\\assets\\css\\index.css"
+    },
+    {
+      "Id": "D:\\Phát triển úng dụng thông minh\\BookingHotel-WEB\\teamplate\\WebBookingHotel\\wwwroot\\assets\\css\\rooms-and-suites.css",
+      "PackagePath": "staticwebassets\\assets\\css\\rooms-and-suites.css"
+    },
+    {
+      "Id": "D:\\Phát triển úng dụng thông minh\\BookingHotel-WEB\\teamplate\\WebBookingHotel\\wwwroot\\assets\\img\\Homepage-jumbotron.webp",
+      "PackagePath": "staticwebassets\\assets\\img\\Homepage-jumbotron.webp"
+    },
+    {
+      "Id": "D:\\Phát triển úng dụng thông minh\\BookingHotel-WEB\\teamplate\\WebBookingHotel\\wwwroot\\assets\\img\\Rectangle 42.webp",
+      "PackagePath": "staticwebassets\\assets\\img\\Rectangle 42.webp"
+    },
+    {
+      "Id": "D:\\Phát triển úng dụng thông minh\\BookingHotel-WEB\\teamplate\\WebBookingHotel\\wwwroot\\assets\\img\\Rectangle 57.webp",
+      "PackagePath": "staticwebassets\\assets\\img\\Rectangle 57.webp"
+    },
+    {
+      "Id": "D:\\Phát triển úng dụng thông minh\\BookingHotel-WEB\\teamplate\\WebBookingHotel\\wwwroot\\assets\\img\\Rectangle 75.webp",
+      "PackagePath": "staticwebassets\\assets\\img\\Rectangle 75.webp"
+    },
+    {
+      "Id": "D:\\Phát triển úng dụng thông minh\\BookingHotel-WEB\\teamplate\\WebBookingHotel\\wwwroot\\assets\\img\\ant-design_play-circle-filled.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\ant-design_play-circle-filled.svg"
+    },
+    {
+      "Id": "D:\\Phát triển úng dụng thông minh\\BookingHotel-WEB\\teamplate\\WebBookingHotel\\wwwroot\\assets\\img\\bed.png",
+      "PackagePath": "staticwebassets\\assets\\img\\bed.png"
+    },
+    {
+      "Id": "D:\\Phát triển úng dụng thông minh\\BookingHotel-WEB\\teamplate\\WebBookingHotel\\wwwroot\\assets\\img\\check-square.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\check-square.svg"
+    },
+    {
+      "Id": "D:\\Phát triển úng dụng thông minh\\BookingHotel-WEB\\teamplate\\WebBookingHotel\\wwwroot\\assets\\img\\clock.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\clock.svg"
+    },
+    {
+      "Id": "D:\\Phát triển úng dụng thông minh\\BookingHotel-WEB\\teamplate\\WebBookingHotel\\wwwroot\\assets\\img\\coffee.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\coffee.svg"
+    },
+    {
+      "Id": "D:\\Phát triển úng dụng thông minh\\BookingHotel-WEB\\teamplate\\WebBookingHotel\\wwwroot\\assets\\img\\customer1.webp",
+      "PackagePath": "staticwebassets\\assets\\img\\customer1.webp"
+    },
+    {
+      "Id": "D:\\Phát triển úng dụng thông minh\\BookingHotel-WEB\\teamplate\\WebBookingHotel\\wwwroot\\assets\\img\\customer2.webp",
+      "PackagePath": "staticwebassets\\assets\\img\\customer2.webp"
+    },
+    {
+      "Id": "D:\\Phát triển úng dụng thông minh\\BookingHotel-WEB\\teamplate\\WebBookingHotel\\wwwroot\\assets\\img\\customer3.webp",
+      "PackagePath": "staticwebassets\\assets\\img\\customer3.webp"
+    },
+    {
+      "Id": "D:\\Phát triển úng dụng thông minh\\BookingHotel-WEB\\teamplate\\WebBookingHotel\\wwwroot\\assets\\img\\database.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\database.svg"
+    },
+    {
+      "Id": "D:\\Phát triển úng dụng thông minh\\BookingHotel-WEB\\teamplate\\WebBookingHotel\\wwwroot\\assets\\img\\facebook.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\facebook.svg"
+    },
+    {
+      "Id": "D:\\Phát triển úng dụng thông minh\\BookingHotel-WEB\\teamplate\\WebBookingHotel\\wwwroot\\assets\\img\\favicon.webp",
+      "PackagePath": "staticwebassets\\assets\\img\\favicon.webp"
+    },
+    {
+      "Id": "D:\\Phát triển úng dụng thông minh\\BookingHotel-WEB\\teamplate\\WebBookingHotel\\wwwroot\\assets\\img\\gymnasium.webp",
+      "PackagePath": "staticwebassets\\assets\\img\\gymnasium.webp"
+    },
+    {
+      "Id": "D:\\Phát triển úng dụng thông minh\\BookingHotel-WEB\\teamplate\\WebBookingHotel\\wwwroot\\assets\\img\\helipad.webp",
+      "PackagePath": "staticwebassets\\assets\\img\\helipad.webp"
+    },
+    {
+      "Id": "D:\\Phát triển úng dụng thông minh\\BookingHotel-WEB\\teamplate\\WebBookingHotel\\wwwroot\\assets\\img\\hotel-1.webp",
+      "PackagePath": "staticwebassets\\assets\\img\\hotel-1.webp"
+    },
+    {
+      "Id": "D:\\Phát triển úng dụng thông minh\\BookingHotel-WEB\\teamplate\\WebBookingHotel\\wwwroot\\assets\\img\\hotel-2.webp",
+      "PackagePath": "staticwebassets\\assets\\img\\hotel-2.webp"
+    },
+    {
+      "Id": "D:\\Phát triển úng dụng thông minh\\BookingHotel-WEB\\teamplate\\WebBookingHotel\\wwwroot\\assets\\img\\hotel-3.webp",
+      "PackagePath": "staticwebassets\\assets\\img\\hotel-3.webp"
+    },
+    {
+      "Id": "D:\\Phát triển úng dụng thông minh\\BookingHotel-WEB\\teamplate\\WebBookingHotel\\wwwroot\\assets\\img\\hotel-4-large.webp",
+      "PackagePath": "staticwebassets\\assets\\img\\hotel-4-large.webp"
+    },
+    {
+      "Id": "D:\\Phát triển úng dụng thông minh\\BookingHotel-WEB\\teamplate\\WebBookingHotel\\wwwroot\\assets\\img\\hotel-5.webp",
+      "PackagePath": "staticwebassets\\assets\\img\\hotel-5.webp"
+    },
+    {
+      "Id": "D:\\Phát triển úng dụng thông minh\\BookingHotel-WEB\\teamplate\\WebBookingHotel\\wwwroot\\assets\\img\\hotel-6.webp",
+      "PackagePath": "staticwebassets\\assets\\img\\hotel-6.webp"
+    },
+    {
+      "Id": "D:\\Phát triển úng dụng thông minh\\BookingHotel-WEB\\teamplate\\WebBookingHotel\\wwwroot\\assets\\img\\instagram.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\instagram.svg"
+    },
+    {
+      "Id": "D:\\Phát triển úng dụng thông minh\\BookingHotel-WEB\\teamplate\\WebBookingHotel\\wwwroot\\assets\\img\\mail.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\mail.svg"
+    },
+    {
+      "Id": "D:\\Phát triển úng dụng thông minh\\BookingHotel-WEB\\teamplate\\WebBookingHotel\\wwwroot\\assets\\img\\map-pin.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\map-pin.svg"
+    },
+    {
+      "Id": "D:\\Phát triển úng dụng thông minh\\BookingHotel-WEB\\teamplate\\WebBookingHotel\\wwwroot\\assets\\img\\phone.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\phone.svg"
+    },
+    {
+      "Id": "D:\\Phát triển úng dụng thông minh\\BookingHotel-WEB\\teamplate\\WebBookingHotel\\wwwroot\\assets\\img\\restaurants.webp",
+      "PackagePath": "staticwebassets\\assets\\img\\restaurants.webp"
+    },
+    {
+      "Id": "D:\\Phát triển úng dụng thông minh\\BookingHotel-WEB\\teamplate\\WebBookingHotel\\wwwroot\\assets\\img\\star hotels logo.png",
+      "PackagePath": "staticwebassets\\assets\\img\\star hotels logo.png"
+    },
+    {
+      "Id": "D:\\Phát triển úng dụng thông minh\\BookingHotel-WEB\\teamplate\\WebBookingHotel\\wwwroot\\assets\\img\\swimming_pool.webp",
+      "PackagePath": "staticwebassets\\assets\\img\\swimming_pool.webp"
+    },
+    {
+      "Id": "D:\\Phát triển úng dụng thông minh\\BookingHotel-WEB\\teamplate\\WebBookingHotel\\wwwroot\\assets\\img\\telephone.webp",
+      "PackagePath": "staticwebassets\\assets\\img\\telephone.webp"
+    },
+    {
+      "Id": "D:\\Phát triển úng dụng thông minh\\BookingHotel-WEB\\teamplate\\WebBookingHotel\\wwwroot\\assets\\img\\twitter.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\twitter.svg"
+    },
+    {
+      "Id": "D:\\Phát triển úng dụng thông minh\\BookingHotel-WEB\\teamplate\\WebBookingHotel\\wwwroot\\assets\\img\\video link.webp",
+      "PackagePath": "staticwebassets\\assets\\img\\video link.webp"
+    },
+    {
+      "Id": "D:\\Phát triển úng dụng thông minh\\BookingHotel-WEB\\teamplate\\WebBookingHotel\\wwwroot\\assets\\img\\wifi.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\wifi.svg"
+    },
+    {
+      "Id": "D:\\Phát triển úng dụng thông minh\\BookingHotel-WEB\\teamplate\\WebBookingHotel\\wwwroot\\assets\\js\\switchRooms.js",
+      "PackagePath": "staticwebassets\\assets\\js\\switchRooms.js"
+    },
+    {
+      "Id": "D:\\Phát triển úng dụng thông minh\\BookingHotel-WEB\\teamplate\\WebBookingHotel\\wwwroot\\assets\\js\\toggleHamburger.js",
+      "PackagePath": "staticwebassets\\assets\\js\\toggleHamburger.js"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.WebBookingHotel.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.WebBookingHotel.props",
+      "PackagePath": "build\\WebBookingHotel.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.WebBookingHotel.props",
+      "PackagePath": "buildMultiTargeting\\WebBookingHotel.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.WebBookingHotel.props",
+      "PackagePath": "buildTransitive\\WebBookingHotel.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

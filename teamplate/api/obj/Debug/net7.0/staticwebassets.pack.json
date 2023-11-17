@@ -1,12 +1,8 @@
 {
   "Files": [
     {
-      "Id": "D:\\Phát triển úng dụng thông minh\\BookingHotel-WEB\\teamplate\\api\\wwwroot\\Upload\\KhachHang\\1\\1.png",
-      "PackagePath": "staticwebassets\\Upload\\KhachHang\\1\\1.png"
-    },
-    {
-      "Id": "D:\\Phát triển úng dụng thông minh\\BookingHotel-WEB\\teamplate\\api\\wwwroot\\Upload\\KhachHang\\2\\2.png",
-      "PackagePath": "staticwebassets\\Upload\\KhachHang\\2\\2.png"
+      "Id": "D:\\Phát triển úng dụng thông minh\\BookingHotel-WEB\\teamplate\\api\\wwwroot\\Upload\\KhachHang\\031666\\031666.jpg",
+      "PackagePath": "staticwebassets\\Upload\\KhachHang\\031666\\031666.jpg"
     },
     {
       "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.api.Microsoft.AspNetCore.StaticWebAssets.props",

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "3xigzC0jmRzMY2Fs2d1IqWU4V3NBjao5fDPHvTZofpM=",
+  "Hash": "GOPktT+QEWZJVB2rlM0TWuUbNjCXK3f6IesgTd2W8UY=",
   "Source": "api",
   "BasePath": "_content/api",
   "Mode": "Default",
@@ -15,40 +15,5 @@
       "Pattern": "**"
     }
   ],
-  "Assets": [
-    {
-      "Identity": "D:\\Phát triển úng dụng thông minh\\BookingHotel-WEB\\teamplate\\api\\wwwroot\\Upload\\KhachHang\\1\\1.png",
-      "SourceId": "api",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\Phát triển úng dụng thông minh\\BookingHotel-WEB\\teamplate\\api\\wwwroot\\",
-      "BasePath": "_content/api",
-      "RelativePath": "Upload/KhachHang/1/1.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Upload\\KhachHang\\1\\1.png"
-    },
-    {
-      "Identity": "D:\\Phát triển úng dụng thông minh\\BookingHotel-WEB\\teamplate\\api\\wwwroot\\Upload\\KhachHang\\2\\2.png",
-      "SourceId": "api",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\Phát triển úng dụng thông minh\\BookingHotel-WEB\\teamplate\\api\\wwwroot\\",
-      "BasePath": "_content/api",
-      "RelativePath": "Upload/KhachHang/2/2.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Upload\\KhachHang\\2\\2.png"
-    }
-  ]
+  "Assets": []
 }

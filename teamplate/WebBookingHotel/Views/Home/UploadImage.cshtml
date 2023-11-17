@@ -1,0 +1,20 @@
+﻿@model WebBookingHotel.Models.DatPhongImageViewModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+	.text-danger-red {
+		color: red;
+	}
+</style>
+<form asp-action="UploadImage" class="jumbotron-form" method="post" enctype="multipart/form-data">
+	<h3>Thank you very much!!!</h3><br>
+	<p>You trusted us with our service<br><br /> Please provide a photo so we can identify you!!!</p>
+	<label asp-for="Sdt" class="hide">Please fill in your phone number</label>
+	<input asp-for="Sdt" placeholder="Please fill in your phone number" />
+	<span asp-validation-for="Sdt" class="text-danger-red"></span>
+	<label asp-for="HinhAnh" class="hide">Please Provide Us A Photo Of Your Face</label>
+	<input asp-for="HinhAnh" placeholder="Please Provide Us A Photo Of Your Face" />
+	<span asp-validation-for="HinhAnh" class="text-danger-red"></span>
+	<button type="submit" class="rates"> Submit </button>
+</form>

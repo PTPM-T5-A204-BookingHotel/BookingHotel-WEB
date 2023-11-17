@@ -1,4 +1,5 @@
 ﻿using api.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace api.Repositories
 {
@@ -24,5 +25,9 @@ namespace api.Repositories
         {
             return _dataContext.DatPhongs.SingleOrDefault(dp => dp.Sdt == sodienthoai);
         }
-    }
+		public async Task<DatPhong> GetDatPhongByPhoneNumberAsync(string sdt)
+		{
+			return await _dataContext.DatPhongs.SingleOrDefaultAsync(dp => dp.Sdt == sdt);
+		}
+	}
 }

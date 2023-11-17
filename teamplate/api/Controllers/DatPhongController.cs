@@ -48,18 +48,30 @@ namespace api.Controllers
         [HttpPost]
         public async Task<IActionResult> Post(DatPhongRequest dp)
         {
-            var isSuccess = await _datPhongService.CreateDatPhong(dp);
+			var isSuccess = await _datPhongService.CreateDatPhong(dp);
 
-            if (isSuccess)
-            {
-                return Ok("Đặt Phòng Thành Công");
-            }
-            else
-            {
-                return BadRequest("Đã xảy ra lỗi khi đặt phòng.");
-            }
-        }
-        [HttpPut]
+			if (isSuccess)
+			{
+				return Ok("Đặt Phòng Thành Công");
+			}
+			else
+			{
+				return BadRequest("Đã xảy ra lỗi khi đặt phòng.");
+			}
+		}
+		[HttpGet("{sdt}")]
+		public async Task<IActionResult> Check(string sdt)
+		{
+			bool isPhoneNumberExists = await _datPhongService.IsPhoneNumberExists(sdt);
+
+			if (isPhoneNumberExists)
+			{
+				return BadRequest();
+			}
+
+			return Ok();
+		}
+		[HttpPut]
         public async Task<IActionResult> Put([FromBody] DatPhongResponse dp)
         {
             await _datPhongService.UpdateDtPhong(dp);
@@ -78,7 +90,7 @@ namespace api.Controllers
             {
                 try
                 {
-                    string Filepath = GetFilepath(model.MaDp);
+                    string Filepath = GetFilepath(model.Sdt);
 
                     if (!System.IO.Directory.Exists(Filepath))
                     {
@@ -86,7 +98,7 @@ namespace api.Controllers
                     }
 
                     string fileExtension = Path.GetExtension(model.HinhAnh.FileName);
-                    string imagepath = Path.Combine(Filepath, model.MaDp + fileExtension);
+                    string imagepath = Path.Combine(Filepath, model.Sdt + fileExtension);
 
                     if (System.IO.File.Exists(imagepath))
                     {
@@ -96,7 +108,7 @@ namespace api.Controllers
                     using (FileStream stream = System.IO.File.Create(imagepath))
                     {
                         model.HinhAnh.CopyTo(stream);
-                        SaveImagePathToDatabase(model.MaDp, imagepath);
+                        SaveImagePathToDatabase(model.Sdt, imagepath);
 
                         APIResponse response = new APIResponse
                         {
@@ -116,7 +128,7 @@ namespace api.Controllers
             return BadRequest(new { ErrorMessage = "Invalid model state." });
         }
 
-        private void SaveImagePathToDatabase(int MaDp, string imagePath)
+        private void SaveImagePathToDatabase(string? Sdt, string imagePath)
         {
             string connectionString = _configuration.GetConnectionString("DefaultConnection");
 
@@ -124,12 +136,12 @@ namespace api.Controllers
             {
                 connection.Open();
 
-                string updateQuery = "UPDATE DatPhong SET HinhAnh = @ImagePath WHERE MaDP = @MaDp";
+                string updateQuery = "UPDATE DatPhong SET HinhAnh = @ImagePath WHERE SDT = @Sdt";
 
                 using (SqlCommand command = new SqlCommand(updateQuery, connection))
                 {
                     command.Parameters.Add("@ImagePath", SqlDbType.NVarChar, -1).Value = imagePath;
-                    command.Parameters.Add("@MaDp", SqlDbType.Int).Value = MaDp;
+                    command.Parameters.Add("@Sdt", SqlDbType.VarChar).Value = Sdt;
 
                     command.ExecuteNonQuery();
                 }
@@ -137,9 +149,9 @@ namespace api.Controllers
         }
 
         [NonAction]
-        private string GetFilepath(int madp)
+        private string GetFilepath(string? Sdt)
         {
-            return this._webHostEnvironment.WebRootPath + "\\Upload\\KhachHang\\" + madp;
+            return this._webHostEnvironment.WebRootPath + "\\Upload\\KhachHang\\" + Sdt;
         }
     }
 }

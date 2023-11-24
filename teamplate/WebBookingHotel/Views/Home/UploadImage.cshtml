@@ -8,13 +8,13 @@
 	}
 </style>
 <form asp-action="UploadImage" class="jumbotron-form" method="post" enctype="multipart/form-data">
-	<h3>Thank you very much!!!</h3><br>
-	<p>You trusted us with our service<br><br /> Please provide a photo so we can identify you!!!</p>
-	<label asp-for="Sdt" class="hide">Please fill in your phone number</label>
-	<input asp-for="Sdt" placeholder="Please fill in your phone number" />
-	<span asp-validation-for="Sdt" class="text-danger-red"></span>
-	<label asp-for="HinhAnh" class="hide">Please Provide Us A Photo Of Your Face</label>
-	<input asp-for="HinhAnh" placeholder="Please Provide Us A Photo Of Your Face" />
-	<span asp-validation-for="HinhAnh" class="text-danger-red"></span>
-	<button type="submit" class="rates"> Submit </button>
+    <h3>Bạn đã đặt phòng !!!</h3><br>
+    <p>Vui lòng cung cấp ảnh để chúng tôi có thể nhận dạng bạn!!!</p>
+    <label asp-for="Sdt" class="hide">Vui lòng điền số điện thoại của bạn</label>
+    <input asp-for="Sdt" placeholder="Please fill in your phone number" />
+    <span asp-validation-for="Sdt" class="text-danger-red"></span>
+    <label asp-for="HinhAnh" class="hide">Vui lòng cung cấp cho chúng tôi một bức ảnh khuôn mặt của bạn </label>
+    <input asp-for="HinhAnh" placeholder="Please Provide Us A Photo Of Your Face" />
+    <span asp-validation-for="HinhAnh" class="text-danger-red"></span>
+    <button type="submit" class="rates"> Gửi  </button>
 </form>

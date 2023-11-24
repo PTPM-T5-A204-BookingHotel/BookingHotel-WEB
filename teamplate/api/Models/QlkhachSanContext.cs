@@ -96,7 +96,10 @@ public partial class QlkhachSanContext : DbContext
             entity.HasIndex(e => e.Sdt).IsUnique();
             entity.Property(e => e.SoLuongTgoLai).HasColumnName("SoLuongTGoLai");
             entity.Property(e => e.ThoiGianNhanPhong).HasColumnType("date");
-        });
+			entity.Property(e => e.TinhtrangDP)
+		    .HasColumnType("nvarchar(50)")
+		    .HasDefaultValue("Chưa Check");
+		});
 
         modelBuilder.Entity<DichVu>(entity =>
         {

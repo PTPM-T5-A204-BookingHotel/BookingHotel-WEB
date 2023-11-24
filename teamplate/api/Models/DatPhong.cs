@@ -19,4 +19,5 @@ public partial class DatPhong
 
     public DateTime? ThoiGianNhanPhong { get; set; }
     public string? HinhAnh {  get; set; }
+    public string? TinhtrangDP {  get; set; }
 }
